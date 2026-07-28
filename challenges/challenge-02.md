@@ -1,4 +1,4 @@
-> Atom positions define a unit-disk graph (edge iff $r_{ij} < R_b$), and the blockade restricts measured configurations to independent sets of it. Embed the target graph, then design a sweep that returns a maximum independent set more often than the linear ramp.
+> Scale from one entangled pair to a computation. Qubit placement programs the interaction graph (edge iff $r_{ij} < R_b$), the problem's solution is encoded in the ground state of the resulting many-body Hamiltonian, and an adiabatic sweep steers the register toward it; a computational-basis measurement returns the answer as a bitstring — a maximum independent set of the graph. Embed the target graph, then beat the linear ramp's success probability.
 
 **SYSTEM.** Four to five atoms; positions are free parameters. The register induces a *unit-disk graph* $G$: vertices are atoms, and $(i,j)$ is an edge iff $r_{ij} < R_b$.
 

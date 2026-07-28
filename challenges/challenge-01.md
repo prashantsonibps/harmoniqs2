@@ -1,4 +1,4 @@
-> Two atoms inside the blockade radius support at most one Rydberg excitation, so a global pulse drives $|gg\rangle$ to the Bell state $(|gr\rangle + |rg\rangle)/\sqrt{2}$. Prepare it at a strongly blockaded spacing and a weakly blockaded one, beating the reference square pulse at both.
+> Entangle two qubits. Each atom encodes a qubit in $|g\rangle$, $|r\rangle$, and the blockade is the entangling resource: it forbids $|rr\rangle$, so a global drive takes the product state $|gg\rangle$ to the maximally entangled Bell state $(|gr\rangle + |rg\rangle)/\sqrt{2}$ — the same interaction that underlies two-qubit gates on this hardware. Maximize the Bell-state fidelity at a strong interaction strength and a weak one, beating the reference square pulse at both.
 
 **SYSTEM.** Two atoms at spacing $r$, both coupled to the same global drive. For $r < R_b$ the doubly excited state $|rr\rangle$ is shifted out of resonance by $C_6/r^6$ — the blockade.
 
