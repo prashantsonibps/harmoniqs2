@@ -34,7 +34,7 @@ Baselines are stated against the analog device model in Pulser (`pulser.AnalogDe
 |---|---|---|---|
 | Interaction coefficient | $C_6/\hbar$ | 865,723 rad µs⁻¹ µm⁶ | Rydberg level 60 |
 | Max Rabi frequency | $\Omega_{\max}$ | 12.57 rad/µs (2π × 2 MHz) | global channel |
-| Max \|detuning\| | $\|\delta\|_{\max}$ | 125.7 rad/µs (2π × 20 MHz) | |
+| Max \|detuning\| | $\vert\delta\vert_{\max}$ | 125.7 rad/µs (2π × 20 MHz) | |
 | Max sequence duration | $T_{\max}$ | 6 000 ns | hard cap for all challenges |
 | Min atom spacing | $r_{\min}$ | 5 µm | |
 | Max atoms / max radius | — | 80 atoms / 38 µm from origin | |

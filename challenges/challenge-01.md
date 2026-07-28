@@ -19,7 +19,7 @@ $$
 | Spacing | $V = C_6/\hbar r^6$ | $V/\Omega_{\mathrm{ref}}$ | Blockade quality |
 |---|---|---|---|
 | $r_1 = 5.0\ \mu\mathrm{m}$ | 55.4 rad/µs | 8.8 | strong — reference pulse is close to optimal |
-| $r_2 = 6.5\ \mu\mathrm{m}$ | 11.5 rad/µs | 1.8 | weak — leakage to $\|rr\rangle$; the gap you close |
+| $r_2 = 6.5\ \mu\mathrm{m}$ | 11.5 rad/µs | 1.8 | weak — leakage to $\vert rr\rangle$; the gap you close |
 
 **SCORE.** Bell-state fidelity $F = |\langle\Phi|\psi(T)\rangle|^2$ in simulation; hardware validation compares measured populations $P_{gg}, P_{gr}, P_{rg}, P_{rr}$ (recommended: 500 shots) against simulated values.
 
