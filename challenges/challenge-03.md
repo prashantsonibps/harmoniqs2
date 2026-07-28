@@ -2,9 +2,9 @@
 
 **REFERENCE.** [arXiv:2511.22967](https://arxiv.org/abs/2511.22967) benchmarks MIS solution quality for the quantum adiabatic algorithm and QAOA on random unit-disk graphs, on neutral-atom QPUs from ~10 to 85+ atoms, and reports solution quality degrading with system size.
 
-**TASK.** Reproduce the paper's instances at one or more system sizes and optimize the full pulse schedule — waveform shapes, sweep profile, timing, and (where the instance permits) register geometry — to raise solution quality above the published curve, scored on the paper's own metric at matched instance size and shot count.
+**TASK.** Reproduce the paper's instances at one or more system sizes and optimize the full pulse schedule — waveform shapes, sweep profile, timing, and (where the instance permits) register geometry — to raise solution quality above the published curve, scored on the paper's own metric at matched instance size and shot count. The device envelope caps hardware at 80 atoms: instances above 80 are simulation-only, so run your hardware validation at a matched size of 80 atoms or fewer.
 
-**BASELINE.** The published curve itself. As a starting schedule, the starter kit ships the Challenge 02 ramp stretched to $T = 6\ 000$ ns with the same $\Omega_b$, $\delta_0$, $\delta_f$; it will **not** beat the paper — it is scaffolding, not a strategy.
+**BASELINE.** The published curve itself. As a starting schedule, the starter kit ships the Challenge 02 ramp stretched to $T = 6\ 000$ ns (252 ns rise/fall, 5 496 ns hold) with the same $\Omega_b$, $\delta_0$, $\delta_f$; it will **not** beat the paper — it is scaffolding, not a strategy.
 
 **SCORING METRIC.** Report the paper's solution-quality metric; where a self-contained number is needed, use the approximation ratio
 

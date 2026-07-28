@@ -13,7 +13,7 @@ Harmoniqs × Pasqal × Microsoft · July 29, 2026 · Microsoft Garage, NYC
 All three challenges use the same system: a register of $N$ atoms evolving under the analog-mode Rydberg Hamiltonian, driven by a single global pulse,
 
 $$
-\frac{H(t)}{\hbar} \ =\  \frac{\Omega(t)}{2}\sum_i \sigma_x^{(i)} \ -\  \delta(t)\sum_i n_i \ +\  \sum_{i \lt j}\frac{C_6}{r_{ij}^6} n_i n_j ,
+\frac{H(t)}{\hbar} \ =\  \frac{\Omega(t)}{2}\sum_i \sigma_x^{(i)} \ -\  \delta(t)\sum_i n_i \ +\  \sum_{i \lt j}\frac{C_6}{\hbar\, r_{ij}^6} n_i n_j ,
 $$
 
 where $\Omega(t)$ is the Rabi frequency and $\delta(t)$ the detuning of the global drive (shared by every atom), $n_i = |r\rangle\langle r|_i$ counts the Rydberg excitation of atom $i$, and $r_{ij}$ is fixed by the register layout. Your control variables are the waveforms $\Omega(t)$, $\delta(t)$ and the atom positions.
@@ -24,7 +24,7 @@ $$
 \frac{C_6}{R_b^6} = \hbar\Omega \quad\Longrightarrow\quad R_b = \left(\frac{C_6}{\hbar\Omega}\right)^{1/6}.
 $$
 
-Two atoms closer than $R_b$ cannot both be excited. All three challenges run on that fact.
+Double excitation of two atoms closer than $R_b$ is strongly suppressed — suppressed, not forbidden: the deeper inside $R_b$, the stronger the suppression (Challenge 01's second spacing sits just inside, where the blockade leaks). All three challenges run on that fact.
 
 ## Device envelope
 
@@ -53,7 +53,7 @@ Baselines are stated against the analog device model in Pulser (`pulser.AnalogDe
 |---|---|---|---|
 | [Challenge 01](challenges/challenge-01.md) | 2 atoms | Bell-state prep under blockade, at two spacings | fidelity $F$ |
 | [Challenge 02](challenges/challenge-02.md) | 4–5 atoms | embed a target graph, sweep to its maximum independent set | $P_{\mathrm{MIS}}$ |
-| [Challenge 03](challenges/challenge-03.md) | 10–85+ atoms | beat a published benchmark curve at matched instance size | paper's metric / $\mathcal{R}$ |
+| [Challenge 03](challenges/challenge-03.md) | 10–85+ atoms (hardware ≤ 80) | beat a published benchmark curve at matched instance size | paper's metric / $\mathcal{R}$ |
 
 ## Submission format
 
