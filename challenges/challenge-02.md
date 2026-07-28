@@ -1,3 +1,5 @@
+> Now the layout is the program. Atoms closer than the blockade radius can't both be excited, so where you place them draws a graph: near neighbors are edges, and no edge ever has both ends lit. Sweep the drive slowly and the register fills with as many excitations as the graph allows — read off which atoms are lit and you're holding a maximum independent set. Your job is to place the atoms to build the target graph, then beat a plain linear sweep at finding it.
+
 **SYSTEM.** Four to five atoms; positions are free parameters. The register induces a *unit-disk graph* $G$: vertices are atoms, and $(i,j)$ is an edge iff $r_{ij} < R_b$.
 
 **TASK.** Choose positions so that $G$ equals a target graph below, then design a global sweep $\Omega(t)$, $\delta(t)$ from $|g \cdots g\rangle$ such that a final measurement returns a maximum independent set of $G$ — atoms found in $|r\rangle$ form the candidate set.

@@ -1,3 +1,5 @@
+> The same idea at real scale. A recent benchmark ran exactly this MIS recipe on neutral-atom processors from ~10 to 85+ atoms and published how solution quality slides as systems grow. That curve is your opponent: rebuild the paper's instances at a size of your choosing and out-design its pulse schedule. Anything above the published line wins.
+
 **REFERENCE.** [arXiv:2511.22967](https://arxiv.org/abs/2511.22967) benchmarks MIS solution quality for the quantum adiabatic algorithm and QAOA on random unit-disk graphs, on neutral-atom QPUs from ~10 to 85+ atoms, and reports solution quality degrading with system size.
 
 **TASK.** Reproduce the paper's instances at one or more system sizes and optimize the full pulse schedule — waveform shapes, sweep profile, timing, and (where the instance permits) register geometry — to raise solution quality above the published curve, scored on the paper's own metric at matched instance size and shot count.
