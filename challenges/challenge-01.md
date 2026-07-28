@@ -1,4 +1,4 @@
-> Bring two atoms close enough and they interact so strongly that only one of them can be excited at a time — the Rydberg blockade. Drive the pair with a single shared pulse and that one excitation has no choice but to be shared between them: a Bell state, textbook entanglement. Your job is to prepare it as cleanly as possible — first at a spacing where the blockade does all the work, then at one where it barely holds and the standard pulse starts to leak.
+> Two atoms inside the blockade radius support at most one Rydberg excitation, so a global pulse drives $|gg\rangle$ to the Bell state $(|gr\rangle + |rg\rangle)/\sqrt{2}$. Prepare it at a strongly blockaded spacing and a weakly blockaded one, beating the reference square pulse at both.
 
 **SYSTEM.** Two atoms at spacing $r$, both coupled to the same global drive. For $r < R_b$ the doubly excited state $|rr\rangle$ is shifted out of resonance by $C_6/r^6$ — the blockade.
 
