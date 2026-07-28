@@ -2,7 +2,7 @@
 
 **TASK.** Reproduce the paper's instances at one or more system sizes and optimize the full pulse schedule — waveform shapes, sweep profile, timing, and (where the instance permits) register geometry — to raise solution quality above the published curve, scored on the paper's own metric at matched instance size and shot count.
 
-**BASELINE.** The published curve itself. As a starting schedule, the starter kit ships the Challenge 02 ramp stretched to $T = 6\,000$ ns with the same $\Omega_b$, $\delta_0$, $\delta_f$; it will **not** beat the paper — it is scaffolding, not a strategy.
+**BASELINE.** The published curve itself. As a starting schedule, the starter kit ships the Challenge 02 ramp stretched to $T = 6\ 000$ ns with the same $\Omega_b$, $\delta_0$, $\delta_f$; it will **not** beat the paper — it is scaffolding, not a strategy.
 
 **SCORING METRIC.** Report the paper's solution-quality metric; where a self-contained number is needed, use the approximation ratio
 

@@ -11,7 +11,7 @@ $$
 **REFERENCE PULSE (THE BASELINE TO BEAT).** A resonant square pulse exploiting the collective $\sqrt{2}$-enhanced Rabi oscillation of the blockaded pair:
 
 $$
-\Omega(t) = \Omega_{\mathrm{ref}} = 6.283\ \mathrm{rad}/\mu\mathrm{s}\ (2\pi \times 1.0\ \mathrm{MHz}), \qquad \delta(t) = 0, \qquad t \in [0,\, T_{\mathrm{ref}}], \qquad T_{\mathrm{ref}} = \frac{\pi}{\sqrt{2}\,\Omega_{\mathrm{ref}}} \approx 354\ \mathrm{ns}
+\Omega(t) = \Omega_{\mathrm{ref}} = 6.283\ \mathrm{rad}/\mu\mathrm{s}\ (2\pi \times 1.0\ \mathrm{MHz}), \qquad \delta(t) = 0, \qquad t \in [0, T_{\mathrm{ref}}], \qquad T_{\mathrm{ref}} = \frac{\pi}{\sqrt{2}\Omega_{\mathrm{ref}}} \approx 354\ \mathrm{ns}
 $$
 
 (realized as 352 ns on the 4 ns clock). At $\Omega_{\mathrm{ref}}$ the blockade radius is $R_b \approx 7.2\ \mu\mathrm{m}$, so both spacings are blockaded — but not equally:
