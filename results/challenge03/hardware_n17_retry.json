@@ -1,0 +1,10 @@
+{
+  "batch_id": "640eb36a-1713-4573-9888-98890b7ee080",
+  "job_id": "46b2678b-5e6f-48f6-ba79-599ce12637b7",
+  "device": "FRESNEL_CAN1",
+  "shots": 500,
+  "status": "submitted",
+  "sequence": "results/challenge03/sequence_n17_retry.json",
+  "duration_ns": 4000,
+  "result_pending": true
+}

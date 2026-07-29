@@ -1,0 +1,144 @@
+{
+  "n_vertices": 17,
+  "paper_target": 0.87004419,
+  "paper_valid_fraction": 0.515,
+  "paper_500_shot_reproduction": {
+    "replicates": [
+      {
+        "case": 2,
+        "valid_count": 240,
+        "valid_size_sum": 1249,
+        "shots": 500,
+        "valid_approximation_ratio": 0.8673611111111111
+      },
+      {
+        "case": 3,
+        "valid_count": 275,
+        "valid_size_sum": 1440,
+        "shots": 500,
+        "valid_approximation_ratio": 0.8727272727272727
+      }
+    ],
+    "mean_valid_approximation_ratio": 0.8700441919191919
+  },
+  "baseline_exact": {
+    "valid_probability": 0.7791420655108517,
+    "valid_approximation_ratio": 0.9480223213926745,
+    "optimal_probability": 0.5636386387399835,
+    "expected_qubo_cost": -5.429954992743064
+  },
+  "baseline_counts_500": {
+    "shots": 500,
+    "valid_probability": 0.7840000000000005,
+    "valid_approximation_ratio": 0.9549319727891146,
+    "optimal_probability": 0.5720000000000002,
+    "expected_qubo_cost": -5.503999999999997
+  },
+  "optimized_exact": {
+    "valid_probability": 0.6651123557983364,
+    "valid_approximation_ratio": 0.9793091809971406,
+    "optimal_probability": 0.5842801995499107,
+    "expected_qubo_cost": -5.486053214945153
+  },
+  "optimized_counts_500": {
+    "shots": 500,
+    "valid_probability": 0.6800000000000004,
+    "valid_approximation_ratio": 0.9779411764705878,
+    "optimal_probability": 0.5900000000000002,
+    "expected_qubo_cost": -5.531999999999996
+  },
+  "optimized_modulated_exact": {
+    "valid_probability": 0.6663432246335194,
+    "valid_approximation_ratio": 0.979460947566727,
+    "optimal_probability": 0.585874943762634,
+    "expected_qubo_cost": -5.487200445853292
+  },
+  "optimized_modulated_counts_500": {
+    "shots": 500,
+    "valid_probability": 0.6800000000000004,
+    "valid_approximation_ratio": 0.978431372549019,
+    "optimal_probability": 0.5920000000000002,
+    "expected_qubo_cost": -5.533999999999996
+  },
+  "optimized_convergence": {
+    "48": {
+      "valid_probability": 0.09314146690129022,
+      "valid_approximation_ratio": 0.9937907078653634,
+      "optimal_probability": 0.08971200544227804,
+      "expected_qubo_cost": -4.311099258243148
+    },
+    "96": {
+      "valid_probability": 0.6631276616835056,
+      "valid_approximation_ratio": 0.9793097209235581,
+      "optimal_probability": 0.5822392334093779,
+      "expected_qubo_cost": -5.4230523132921835
+    },
+    "192": {
+      "valid_probability": 0.6651123557983364,
+      "valid_approximation_ratio": 0.9793091809971406,
+      "optimal_probability": 0.5842801995499107,
+      "expected_qubo_cost": -5.486053214945153
+    }
+  },
+  "robust_ensemble": [
+    {
+      "variation": "omega_-2pct",
+      "score": {
+        "valid_probability": 0.6685785195488152,
+        "valid_approximation_ratio": 0.9772383580291287,
+        "optimal_probability": 0.5789670965259006,
+        "expected_qubo_cost": -5.421500472383786
+      }
+    },
+    {
+      "variation": "omega_+2pct",
+      "score": {
+        "valid_probability": 0.6576387818299936,
+        "valid_approximation_ratio": 0.981085190686377,
+        "optimal_probability": 0.5843246889283193,
+        "expected_qubo_cost": -5.421968447707378
+      }
+    },
+    {
+      "variation": "detuning_-0.3",
+      "score": {
+        "valid_probability": 0.7444068357808054,
+        "valid_approximation_ratio": 0.9789118315703341,
+        "optimal_probability": 0.6527955855203795,
+        "expected_qubo_cost": -5.524494643959704
+      }
+    },
+    {
+      "variation": "detuning_+0.3",
+      "score": {
+        "valid_probability": 0.5862010421285624,
+        "valid_approximation_ratio": 0.9787892212541963,
+        "optimal_probability": 0.5130863170952201,
+        "expected_qubo_cost": -5.318637113628201
+      }
+    },
+    {
+      "variation": "spacing_-0.02um",
+      "score": {
+        "valid_probability": 0.6994963416752028,
+        "valid_approximation_ratio": 0.9776101130975695,
+        "optimal_probability": 0.6073697275843982,
+        "expected_qubo_cost": -5.458356862612023
+      }
+    },
+    {
+      "variation": "spacing_+0.02um",
+      "score": {
+        "valid_probability": 0.4251684876834716,
+        "valid_approximation_ratio": 0.9831166961147749,
+        "optimal_probability": 0.3826350175057178,
+        "expected_qubo_cost": -4.771663058326698
+      }
+    }
+  ],
+  "robust_worst_valid_approximation_ratio": 0.9772383580291287,
+  "strictly_beats_paper": true,
+  "sequence": "sequence_n17.json",
+  "register": "register_n17.json",
+  "parameters": "parameters_n17.json"
+}
