@@ -1,0 +1,17 @@
+{
+  "segment_duration_ns": 128,
+  "controls": [
+    {
+      "omega_rad_us": 8.52664328,
+      "detuning_rad_us": 9.44053212
+    },
+    {
+      "omega_rad_us": 4.1352488,
+      "detuning_rad_us": -3.67173847
+    },
+    {
+      "omega_rad_us": 6.31903239,
+      "detuning_rad_us": -6.8585123
+    }
+  ]
+}

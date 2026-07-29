@@ -1,0 +1,29 @@
+{
+  "segment_duration_ns": 64,
+  "controls": [
+    {
+      "omega_rad_us": 12.566370614359172,
+      "detuning_rad_us": 20.72575653504641
+    },
+    {
+      "omega_rad_us": 9.134277378073827,
+      "detuning_rad_us": -3.9085958783227124
+    },
+    {
+      "omega_rad_us": 1.8839515329032013,
+      "detuning_rad_us": 11.598737935170767
+    },
+    {
+      "omega_rad_us": 2.378837096380684,
+      "detuning_rad_us": -5.077223945800441
+    },
+    {
+      "omega_rad_us": 4.28135518111231,
+      "detuning_rad_us": -13.793476630174426
+    },
+    {
+      "omega_rad_us": 10.931906165747382,
+      "detuning_rad_us": -4.064006332104969
+    }
+  ]
+}

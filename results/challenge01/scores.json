@@ -1,0 +1,80 @@
+{
+  "challenge": 1,
+  "target": "(|gr> + |rg>) / sqrt(2)",
+  "spacings": {
+    "5.0um": {
+      "baseline_fidelity": 0.9925639863234279,
+      "baseline_modulated_fidelity": 0.99816055165981,
+      "optimized_model_fidelity": 0.999999999784162,
+      "optimized_fidelity": 0.9999982436633382,
+      "optimized_modulated_fidelity": 0.9945272099247567,
+      "strictly_beats_baseline": true,
+      "robust_fidelity": 0.9979930798390126,
+      "robust_modulated_fidelity": 0.9985046324590414,
+      "robust_beats_both_baselines": true,
+      "baseline_counts_500": {
+        "11": 3,
+        "10": 248,
+        "01": 248,
+        "00": 1
+      },
+      "optimized_counts_500": {
+        "10": 250,
+        "01": 250
+      },
+      "optimized_modulated_counts_500": {
+        "10": 249,
+        "01": 248,
+        "00": 3
+      },
+      "robust_counts_500": {
+        "10": 250,
+        "01": 249,
+        "00": 1
+      },
+      "robust_modulated_counts_500": {
+        "10": 250,
+        "01": 250
+      }
+    },
+    "6.5um": {
+      "baseline_fidelity": 0.7500035988708288,
+      "baseline_modulated_fidelity": 0.7717251253310794,
+      "optimized_model_fidelity": 0.9999999991591528,
+      "optimized_fidelity": 0.9999684221211264,
+      "optimized_modulated_fidelity": 0.9696169835013546,
+      "strictly_beats_baseline": true,
+      "robust_fidelity": 0.9917436403708455,
+      "robust_modulated_fidelity": 0.9927064082411161,
+      "robust_beats_both_baselines": true,
+      "baseline_counts_500": {
+        "11": 112,
+        "10": 188,
+        "01": 187,
+        "00": 13
+      },
+      "optimized_counts_500": {
+        "10": 250,
+        "01": 250
+      },
+      "optimized_modulated_counts_500": {
+        "11": 8,
+        "10": 243,
+        "01": 242,
+        "00": 7
+      },
+      "robust_counts_500": {
+        "11": 1,
+        "10": 248,
+        "01": 248,
+        "00": 3
+      },
+      "robust_modulated_counts_500": {
+        "11": 1,
+        "10": 248,
+        "01": 248,
+        "00": 3
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "harmoniqs-hackathon"
+version = "0.1.0"
+description = "Pulser starter kit for A Real Quantum Hackathon"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+  "matplotlib>=3.10",
+  "networkx>=3.4",
+  "numpy>=2.0",
+  "pulser>=1.8",
+  "scipy>=1.15",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3"]
+
+[project.scripts]
+harmoniqs-challenge01 = "harmoniqs.challenge01:main"
+harmoniqs-challenge02 = "harmoniqs.challenge02:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
