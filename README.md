@@ -42,6 +42,14 @@ Our task is therefore a control problem. We choose atom positions and pulse
 waveforms so that the final quantum state places as much probability as
 possible on the desired answer.
 
+## Detailed challenge documentation
+
+Each challenge has its own README covering the physics, optimizer design,
+results, hardware runs, and caveats in full:
+
+- [Challenge 1 — Bell-state preparation](docs/challenge01/README.md)
+- [Challenge 2 — Maximum Independent Set](docs/challenge02/README.md)
+
 ## Challenge 1: Bell-state preparation
 
 ### Problem
