@@ -21,7 +21,9 @@
       "job_id": "eba8f06a-d32c-4a58-86af-5e8a0d378ef8",
       "device": "FRESNEL_CAN1",
       "shots": 500,
-      "status": "submitted"
+      "status": "done",
+      "hardware_p_mis": 0.708,
+      "valid_independent_set_fraction": 0.864
     }
   }
 }

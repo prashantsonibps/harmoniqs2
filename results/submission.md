@@ -13,6 +13,9 @@ Highest challenge attempted: **Challenge 02**
 - Pulse parameters: `results/challenge02/parameters_c5_robust.json`
 - Pasqal Cloud batch ID: `9eae6251-45f9-4c82-a45d-db30eee86c8b`
 - Pasqal Cloud job ID: `eba8f06a-d32c-4a58-86af-5e8a0d378ef8`
+- Hardware `P_MIS`: **0.708** (354/500 shots)
+- Hardware valid-independent-set fraction: **0.864** (432/500 shots)
+- Hardware counts: `results/challenge02/hardware_c5_robust.json`
 
 ## Challenge 01 supporting result — shaped pulse
 
