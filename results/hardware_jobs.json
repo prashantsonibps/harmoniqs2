@@ -24,6 +24,13 @@
       "status": "done",
       "hardware_p_mis": 0.708,
       "valid_independent_set_fraction": 0.864
+    },
+    "star": {
+      "batch_id": "3ad69bb5-fa23-4228-8d2e-f0f476c5aaf8",
+      "job_id": "3db5310b-9a4e-4e48-be1e-951b3b134dca",
+      "device": "FRESNEL_CAN1",
+      "shots": 500,
+      "status": "submitted"
     }
   }
 }

@@ -17,6 +17,16 @@ Highest challenge attempted: **Challenge 02**
 - Hardware valid-independent-set fraction: **0.864** (432/500 shots)
 - Hardware counts: `results/challenge02/hardware_c5_robust.json`
 
+## Challenge 02 supporting result — star K1,3
+
+- Simulated `P_MIS`: **0.992213**
+- Modulation-aware `P_MIS`: **0.993861**
+- Baseline `P_MIS`: **0.907995**
+- Sequence/register: `results/challenge02/sequence_star.json`
+- Pasqal Cloud batch ID: `3ad69bb5-fa23-4228-8d2e-f0f476c5aaf8`
+- Pasqal Cloud job ID: `3db5310b-9a4e-4e48-be1e-951b3b134dca`
+- Hardware status: submitted
+
 ## Challenge 01 supporting result — shaped pulse
 
 - 5.0 µm: `F = 0.99999967` (baseline `0.99256`)
