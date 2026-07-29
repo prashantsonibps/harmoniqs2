@@ -1,0 +1,144 @@
+{
+  "n_vertices": 13,
+  "paper_target": 0.90817732,
+  "paper_valid_fraction": 0.66133333,
+  "paper_500_shot_reproduction": {
+    "replicates": [
+      {
+        "case": 2,
+        "valid_count": 294,
+        "valid_size_sum": 1088,
+        "shots": 500,
+        "valid_approximation_ratio": 0.9251700680272109
+      },
+      {
+        "case": 3,
+        "valid_count": 363,
+        "valid_size_sum": 1294,
+        "shots": 500,
+        "valid_approximation_ratio": 0.8911845730027548
+      }
+    ],
+    "mean_valid_approximation_ratio": 0.9081773205149828
+  },
+  "baseline_exact": {
+    "valid_probability": 0.9083594293584759,
+    "valid_approximation_ratio": 0.9766360357027667,
+    "optimal_probability": 0.8258101909058645,
+    "expected_qubo_cost": -3.803052189963548
+  },
+  "baseline_counts_500": {
+    "shots": 500,
+    "valid_probability": 0.9120000000000001,
+    "valid_approximation_ratio": 0.9764254385964909,
+    "optimal_probability": 0.8260000000000001,
+    "expected_qubo_cost": -3.8139999999999987
+  },
+  "optimized_exact": {
+    "valid_probability": 0.837127958056304,
+    "valid_approximation_ratio": 0.9985219172663344,
+    "optimal_probability": 0.8321936740145397,
+    "expected_qubo_cost": -3.8296483131735783
+  },
+  "optimized_counts_500": {
+    "shots": 500,
+    "valid_probability": 0.84,
+    "valid_approximation_ratio": 1.0,
+    "optimal_probability": 0.84,
+    "expected_qubo_cost": -3.8399999999999994
+  },
+  "optimized_modulated_exact": {
+    "valid_probability": 0.8362715634445798,
+    "valid_approximation_ratio": 0.998583009868681,
+    "optimal_probability": 0.8315453817180333,
+    "expected_qubo_cost": -3.829154500806833
+  },
+  "optimized_modulated_counts_500": {
+    "shots": 500,
+    "valid_probability": 0.838,
+    "valid_approximation_ratio": 1.0,
+    "optimal_probability": 0.838,
+    "expected_qubo_cost": -3.8379999999999996
+  },
+  "optimized_convergence": {
+    "96": {
+      "valid_probability": 0.7767726199007762,
+      "valid_approximation_ratio": 0.998420091977024,
+      "optimal_probability": 0.7718773793234466,
+      "expected_qubo_cost": -3.686237485928884
+    },
+    "192": {
+      "valid_probability": 0.8354085902791416,
+      "valid_approximation_ratio": 0.9984922947248316,
+      "optimal_probability": 0.8303857925589654,
+      "expected_qubo_cost": -3.811965002686231
+    },
+    "384": {
+      "valid_probability": 0.837127958056304,
+      "valid_approximation_ratio": 0.9985219172663344,
+      "optimal_probability": 0.8321936740145397,
+      "expected_qubo_cost": -3.8296483131735783
+    }
+  },
+  "robust_ensemble": [
+    {
+      "variation": "omega_-2pct",
+      "score": {
+        "valid_probability": 0.8314447071007642,
+        "valid_approximation_ratio": 0.9983310097381023,
+        "optimal_probability": 0.8259101952980434,
+        "expected_qubo_cost": -3.809300203041312
+      }
+    },
+    {
+      "variation": "omega_+2pct",
+      "score": {
+        "valid_probability": 0.84032863235974,
+        "valid_approximation_ratio": 0.9985626930402453,
+        "optimal_probability": 0.8355130057217864,
+        "expected_qubo_cost": -3.814920069711547
+      }
+    },
+    {
+      "variation": "detuning_-0.3",
+      "score": {
+        "valid_probability": 0.8872841942673911,
+        "valid_approximation_ratio": 0.9979951950097751,
+        "optimal_probability": 0.8801965913475659,
+        "expected_qubo_cost": -3.8633768062550633
+      }
+    },
+    {
+      "variation": "detuning_+0.3",
+      "score": {
+        "valid_probability": 0.7805462656474514,
+        "valid_approximation_ratio": 0.998313715499494,
+        "optimal_probability": 0.7752977538839649,
+        "expected_qubo_cost": -3.756887171720466
+      }
+    },
+    {
+      "variation": "spacing_-0.02um",
+      "score": {
+        "valid_probability": 0.86533378932736,
+        "valid_approximation_ratio": 0.9984517234077573,
+        "optimal_probability": 0.8599921351481515,
+        "expected_qubo_cost": -3.842391175074926
+      }
+    },
+    {
+      "variation": "spacing_+0.02um",
+      "score": {
+        "valid_probability": 0.8044938014713886,
+        "valid_approximation_ratio": 0.9985227814893052,
+        "optimal_probability": 0.7997540256956667,
+        "expected_qubo_cost": -3.7952716874484698
+      }
+    }
+  ],
+  "robust_worst_valid_approximation_ratio": 0.9979951950097751,
+  "strictly_beats_paper": true,
+  "sequence": "sequence_n13.json",
+  "register": "register_n13.json",
+  "parameters": "parameters_n13.json"
+}

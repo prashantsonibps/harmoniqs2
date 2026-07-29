@@ -237,6 +237,57 @@ For `K1,3`:
 `C5` is selected for submission because its improvement over the corresponding
 reference is larger.
 
+## Challenge 3: matched benchmark-scale MIS
+
+Challenge 3 reproduces the exact 11-, 13-, and 17-vertex diagonal-connected unit-disk
+grid instances from arXiv:2511.22967 and its public benchmark repository. Both
+smaller instances have a classically certified MIS size of four, while N=17 has
+MIS size six. The paper's Fresnel
+targets are reconstructed from the original 500-shot replicates before any
+candidate is compared against them.
+
+`src/harmoniqs/challenge03.py` uses a matrix-free second-order split propagator:
+the interaction and detuning phases are diagonal, while the global drive
+factorizes into one-qubit rotations. This keeps the complete `2^N` statevector
+and every pairwise Rydberg interaction while making exact N=17 simulation
+practical. The optimized 6 µs schedule uses smooth amplitude and monotone
+detuning control points and is checked with Pulser channel modulation, 500-shot
+reporting, time-step convergence, and drive, detuning, and spacing variations.
+
+### Challenge 3 results
+
+The same jointly optimized schedule beats the paper's matched Fresnel curve in
+modulation-aware exact simulation at all three reproduced sizes:
+
+- N=11: `R=0.998317` versus the published `0.906616`;
+- N=13: `R=0.998583` versus the published `0.908177`;
+- N=17: `R=0.979461` versus the published `0.870044`.
+
+The first N=17 hardware run used the 6 µs schedule and obtained `R=0.845238`,
+a `0.392` valid-set fraction, and `0.144` MIS probability over 500 shots. That
+run exposed a larger hardware penalty than channel modulation alone predicted.
+The hardware-calibrated retry therefore shortens the pulse to 4 µs and balances
+solution quality against validity; it reaches modulation-aware `R=0.980854`,
+valid probability `0.620625`, and robust worst-case `R=0.979088`.
+
+Hardware records:
+
+- first N=17 batch `22954a95-1a6a-44cd-944d-7330f40be804`, job
+  `d89cc6b8-4f8a-4c17-81f0-483540effdf4` — completed;
+- 4 µs retry batch `640eb36a-1713-4573-9888-98890b7ee080`, job
+  `46b2678b-5e6f-48f6-ba79-599ce12637b7` — result pending.
+
+Run the fast reproducible optimization:
+
+```bash
+XDG_CACHE_HOME="$PWD/.cache" MPLCONFIGDIR="$PWD/.mplconfig" \
+  .venv/bin/python -m harmoniqs.challenge03 --quick
+```
+
+All Challenge 3 sequences, 60-trap registers, parameters, exact certificates,
+score reports, and provenance are written under `results/challenge03/`.
+Hardware submission is intentionally excluded from this command.
+
 ## Repository structure
 
 ```text
@@ -246,6 +297,7 @@ src/harmoniqs/
   challenge02.py     Graph geometry, MIS model, optimizer, and validation
   challenge02_robust.py
                      Smooth ensemble-robust C5 optimization
+  challenge03.py     Exact N=11/N=13/N=17 benchmark and robust optimizer
 
 scripts/
   run_cloud.py       Safe Pasqal Cloud validation and QPU submission
@@ -258,6 +310,7 @@ tests/
 results/
   challenge01/       Bell pulse sequences, controls, and scores
   challenge02/       MIS sequences, parameters, and scores
+  challenge03/       Matched benchmark instances, sequences, and scores
   submission.md      Discord-ready submission draft
 ```
 
@@ -332,6 +385,15 @@ After confirming the team run budget, submit 500 shots:
 The script requires an explicit `YES` before submission and prints the batch
 and job IDs.
 
+The Challenge 3 retry can be regenerated and validated without spending shots:
+
+```bash
+.venv/bin/python -m harmoniqs.challenge03 --hardware-retry
+.venv/bin/python scripts/run_cloud.py \
+  results/challenge03/sequence_n17_retry.json \
+  --device FRESNEL_CAN1
+```
+
 Regenerate the submission after receiving a job ID:
 
 ```bash
@@ -370,10 +432,13 @@ control, readout, and atom-loss errors.
 
 ## Current limitations and next work
 
-- Hardware job IDs are not yet recorded.
-- The simulation is ideal except for optional channel modulation.
+- Challenge 3 hardware IDs and the completed first N=17 result are recorded;
+  the 4 µs retry result is pending.
+- The simulation includes optional channel modulation and bounded control and
+  geometry perturbations, but not a complete calibrated SPAM model.
 - Large-register exact state-vector simulation is exponentially expensive.
-- Challenge 3 and its benchmark-instance pipeline will be added separately.
+- Challenge 3 exact simulation currently targets N=11, N=13, and N=17; larger
+  instances require a tensor-network, blockade-subspace, or QPU backend.
 - Hardware results should be compared with the saved modulation-aware
   predictions before final submission.
 

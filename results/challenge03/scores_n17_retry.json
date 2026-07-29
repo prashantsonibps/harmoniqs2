@@ -1,0 +1,79 @@
+{
+  "purpose": "N=17 hardware retry after calibration run",
+  "hardware_submitted": false,
+  "duration_ns": 4000,
+  "paper_target": 0.87004419,
+  "first_hardware_score": 0.8452380952380952,
+  "search_modulated_score": {
+    "valid_probability": 0.620624605730255,
+    "valid_approximation_ratio": 0.9808539822498543,
+    "optimal_probability": 0.5524982359476711,
+    "expected_qubo_cost": -5.464513457987456
+  },
+  "ideal_exact": {
+    "valid_probability": 0.6192029079110748,
+    "valid_approximation_ratio": 0.9804119145578661,
+    "optimal_probability": 0.5497322998605767,
+    "expected_qubo_cost": -5.459618218025909
+  },
+  "ideal_counts_500": {
+    "shots": 500,
+    "valid_probability": 0.6380000000000002,
+    "valid_approximation_ratio": 0.9791013584117028,
+    "optimal_probability": 0.558,
+    "expected_qubo_cost": -5.511999999999997
+  },
+  "modulated_exact": {
+    "valid_probability": 0.620624605730255,
+    "valid_approximation_ratio": 0.9808539822498543,
+    "optimal_probability": 0.5524982359476711,
+    "expected_qubo_cost": -5.464513457987456
+  },
+  "modulated_counts_500": {
+    "shots": 500,
+    "valid_probability": 0.6380000000000002,
+    "valid_approximation_ratio": 0.9801462904911172,
+    "optimal_probability": 0.5620000000000002,
+    "expected_qubo_cost": -5.5159999999999965
+  },
+  "robust_ensemble": [
+    {
+      "variation": "omega_-2pct",
+      "score": {
+        "valid_probability": 0.6281706299983653,
+        "valid_approximation_ratio": 0.979809770818939,
+        "optimal_probability": 0.5556000116817172,
+        "expected_qubo_cost": -5.455802806624535
+      }
+    },
+    {
+      "variation": "omega_+2pct",
+      "score": {
+        "valid_probability": 0.613061634502658,
+        "valid_approximation_ratio": 0.9815403263772211,
+        "optimal_probability": 0.5482676140051477,
+        "expected_qubo_cost": -5.453779448436037
+      }
+    },
+    {
+      "variation": "detuning_-0.3",
+      "score": {
+        "valid_probability": 0.6815078905560904,
+        "valid_approximation_ratio": 0.9807084216516316,
+        "optimal_probability": 0.6056130313943888,
+        "expected_qubo_cost": -5.531328701680118
+      }
+    },
+    {
+      "variation": "detuning_+0.3",
+      "score": {
+        "valid_probability": 0.5594076772604246,
+        "valid_approximation_ratio": 0.9790882141127254,
+        "optimal_probability": 0.4931131694737162,
+        "expected_qubo_cost": -5.360760805738223
+      }
+    }
+  ],
+  "robust_worst_valid_approximation_ratio": 0.9790882141127254,
+  "ready_for_hardware": true
+}

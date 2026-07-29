@@ -1,0 +1,16 @@
+{
+  "paper": "arXiv:2511.22967",
+  "repository": "https://github.com/alejomonbar/Benchmarking-neutral-atom-QPUs",
+  "instance_paths": [
+    "Data/Problems/11.json",
+    "Data/Problems/13.json",
+    "Data/Problems/17.json"
+  ],
+  "generation": "4x4/5x5 diagonal-connected grids, NumPy seed 123, random dropout",
+  "paper_scoring": "mean selected-set size over valid samples divided by alpha(G)",
+  "paper_replicates_used": [
+    2,
+    3
+  ],
+  "hardware_jobs_submitted": false
+}
