@@ -21,6 +21,7 @@ from .common import (
     mis_bitstrings,
     mis_probability,
     probabilities_from_state,
+    register_with_layout,
     save_json,
     save_sequence,
     validate_sequence,
@@ -65,10 +66,9 @@ def register_coordinates(graph: str, spacing_um: float) -> list[tuple[float, flo
 
 def make_register(graph: str, spacing_um: float) -> Register:
     coordinates = register_coordinates(graph, spacing_um)
-    return Register.from_coordinates(
+    return register_with_layout(
         coordinates,
-        labels=[f"q{k}" for k in range(len(coordinates))],
-        center=False,
+        [f"q{k}" for k in range(len(coordinates))],
     )
 
 

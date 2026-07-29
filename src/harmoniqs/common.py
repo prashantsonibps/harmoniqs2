@@ -6,7 +6,8 @@ from pathlib import Path
 from typing import Iterable, Sequence as TypingSequence
 
 import numpy as np
-from pulser import AnalogDevice, Sequence
+from pulser import AnalogDevice, Register, Sequence
+from pulser.register import RegisterLayout
 
 SHOTS = 500
 C6_OVER_HBAR = float(AnalogDevice.interaction_coeff)
@@ -14,6 +15,37 @@ OMEGA_MAX = float(AnalogDevice.channels["rydberg_global"].max_amp)
 DETUNING_MAX = float(AnalogDevice.channels["rydberg_global"].max_abs_detuning)
 CLOCK_NS = int(AnalogDevice.channels["rydberg_global"].clock_period)
 MAX_DURATION_NS = int(AnalogDevice.max_sequence_duration)
+
+
+def register_with_layout(
+    coordinates: TypingSequence[tuple[float, float]],
+    labels: TypingSequence[str],
+) -> Register:
+    """Build a 60-trap layout accepted by current layout-required QPUs."""
+    occupied = np.asarray(coordinates, dtype=float)
+    layout_coordinates = [coordinate for coordinate in occupied]
+    for y in np.arange(-30.0, 30.1, 6.0):
+        for x in np.arange(-30.0, 30.1, 6.0):
+            candidate = np.array([x, y])
+            if np.linalg.norm(candidate) > 35.0:
+                continue
+            if all(
+                np.linalg.norm(candidate - existing) >= 5.0
+                for existing in layout_coordinates
+            ):
+                layout_coordinates.append(candidate)
+            if len(layout_coordinates) == 60:
+                break
+        if len(layout_coordinates) == 60:
+            break
+    if len(layout_coordinates) < 60:
+        raise ValueError("Could not construct the required 60-trap layout.")
+    layout = RegisterLayout(layout_coordinates)
+    occupied_traps = layout.get_traps_from_coordinates(*occupied)
+    return layout.define_register(
+        *occupied_traps,
+        qubit_ids=list(labels),
+    )
 
 
 def device_summary() -> dict[str, float | int]:

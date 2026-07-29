@@ -42,6 +42,20 @@ def main() -> None:
         key=lambda item: item[1]["optimized_p_mis"]
         - item[1]["baseline_p_mis"],
     )
+    robust_path = args.results / "challenge02" / "scores_c5_robust.json"
+    robust = load(robust_path) if graph == "c5" and robust_path.exists() else None
+    simulated_score = (
+        robust["robust_candidate"]["ideal_p_mis"]
+        if robust
+        else best["optimized_p_mis"]
+    )
+    modulated_line = (
+        f"- Modulation-aware P_MIS: "
+        f"**{robust['robust_candidate']['modulated_p_mis']:.6f}**\n"
+        if robust
+        else ""
+    )
+    sequence_suffix = "_robust" if robust else ""
     job_ids = ", ".join(args.job_id) if args.job_id else "PENDING HARDWARE RUN"
 
     bell_lines = []
@@ -58,20 +72,20 @@ Highest challenge attempted: **Challenge 02**
 
 ## Challenge 02 result
 - Graph: `{graph}`
-- Simulated P_MIS: **{best['optimized_p_mis']:.6f}**
-- Baseline P_MIS: **{best['baseline_p_mis']:.6f}**
+- Simulated P_MIS: **{simulated_score:.6f}**
+{modulated_line}- Baseline P_MIS: **{best['baseline_p_mis']:.6f}**
 - Shots: 500
-- Sequence/register: `results/challenge02/sequence_{graph}.json`
-- Pulse parameters: `results/challenge02/parameters_{graph}.json`
+- Sequence/register: `results/challenge02/sequence_{graph}{sequence_suffix}.json`
+- Pulse parameters: `results/challenge02/parameters_{graph}{sequence_suffix}.json`
 - Pasqal Cloud job IDs: {job_ids}
 
 ## Challenge 01 supporting result
 {chr(10).join(bell_lines)}
 
 ## What changed and why
-We replaced the linear baseline sweep with a device-valid nonlinear detuning schedule and jointly tuned the drive, endpoints, and register spacing.
-The slower 6 µs evolution allocates more time around the small-gap region while the shaped sweep reduces diabatic transitions.
-Joint geometry-and-pulse optimization increased the probability mass on maximum independent sets while preserving the intended unit-disk graph.
+We replaced the linear baseline sweep with a smooth seven-knot detuning schedule and jointly optimized the drive, endpoints, and pentagon spacing.
+The 6 µs pulse redistributes time around difficult avoided crossings and was optimized against drive, detuning, and geometry perturbations.
+This robust control strategy increases maximum-independent-set probability while preserving the intended C5 unit-disk graph.
 """
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(text, encoding="utf-8")

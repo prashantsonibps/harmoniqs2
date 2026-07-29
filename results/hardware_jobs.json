@@ -1,0 +1,27 @@
+{
+  "challenge01": {
+    "5.0um": {
+      "batch_id": "de647932-3200-4363-aac2-dd3c5964b3d0",
+      "job_id": "cadf5a56-9f1b-4c6c-987c-6729516e777e",
+      "device": "FRESNEL_CAN1",
+      "shots": 500,
+      "status": "failed_missing_calibration"
+    },
+    "6.5um": {
+      "batch_id": "831c0ffb-e589-45e8-a360-820d23208e56",
+      "job_id": "ae3bac5d-86c9-4b9e-9fe1-ff38937d6064",
+      "device": "FRESNEL_CAN1",
+      "shots": 500,
+      "status": "completed"
+    }
+  },
+  "challenge02": {
+    "c5_robust": {
+      "batch_id": "9eae6251-45f9-4c82-a45d-db30eee86c8b",
+      "job_id": "eba8f06a-d32c-4a58-86af-5e8a0d378ef8",
+      "device": "FRESNEL_CAN1",
+      "shots": 500,
+      "status": "submitted"
+    }
+  }
+}

@@ -4,7 +4,7 @@ import argparse
 from pathlib import Path
 
 import numpy as np
-from pulser import AnalogDevice, Pulse, Register, Sequence
+from pulser import AnalogDevice, Pulse, Sequence
 from pulser_simulation import QutipEmulator
 from scipy.linalg import expm
 from scipy.optimize import differential_evolution, minimize
@@ -14,6 +14,7 @@ from .common import (
     OMEGA_MAX,
     deterministic_counts,
     probabilities_from_state,
+    register_with_layout,
     save_json,
     save_sequence,
     validate_sequence,
@@ -80,8 +81,9 @@ def make_sequence(
     controls: np.ndarray,
     segment_duration_ns: int = SEGMENT_DURATION_NS,
 ) -> Sequence:
-    register = Register.from_coordinates(
-        [(0.0, 0.0), (spacing_um, 0.0)], labels=["q0", "q1"]
+    register = register_with_layout(
+        [(0.0, 0.0), (spacing_um, 0.0)],
+        ["q0", "q1"],
     )
     sequence = Sequence(register, AnalogDevice)
     sequence.declare_channel("rydberg", "rydberg_global")

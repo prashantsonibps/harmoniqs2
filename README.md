@@ -164,7 +164,7 @@ The reference protocol uses:
 - constant drive during the middle interval;
 - a linear detuning sweep from negative to positive.
 
-Our optimizer jointly searches:
+The fallback optimizer jointly searches:
 
 - maximum Rabi frequency;
 - initial detuning;
@@ -172,19 +172,27 @@ Our optimizer jointly searches:
 - nonlinear sweep exponent;
 - atom spacing.
 
+The robust optimizer then replaces the single-exponent sweep with seven smooth
+detuning control points and evaluates every candidate under:
+
+- nominal controls;
+- ±2% Rabi-frequency errors;
+- ±0.3 rad/µs detuning offsets;
+- ±0.02 µm atom-position offsets;
+- ideal and channel-modulated Pulser simulation.
+
 The optimized protocol uses the full device-valid `6 µs` duration. The
 amplitude rises smoothly, remains constant through the detuning sweep, and
 falls smoothly to zero.
 
-Optimized `C5` parameters:
+Robust `C5` parameters:
 
 ```text
-maximum Ω       = 5.864953 rad/µs
-initial δ       = -12.790586 rad/µs
-final δ         = 11.736663 rad/µs
-sweep exponent  = 1.017324
+maximum Ω       = 5.261431 rad/µs
+initial δ       = -18.061794 rad/µs
+final δ         = 19.025851 rad/µs
 duration        = 6000 ns
-side length     = 5.261884 µm
+side length     = 5.304414 µm
 ```
 
 ### Simulation and scoring
@@ -207,9 +215,10 @@ again with QuTiP. Scoring always uses the same logical convention:
 For `C5`:
 
 - reference `P_MIS`: `0.787583`;
-- optimized dense `P_MIS`: `0.983185`;
-- Pulser/QuTiP `P_MIS`: `0.983631`;
-- modulation-aware `P_MIS`: `0.984146`.
+- fallback Pulser/QuTiP `P_MIS`: `0.983631`;
+- robust Pulser/QuTiP `P_MIS`: `0.998799`;
+- robust modulation-aware `P_MIS`: `0.998747`;
+- robust worst-case ensemble `P_MIS`: `0.997979`.
 
 For `K1,3`:
 
@@ -227,6 +236,8 @@ src/harmoniqs/
   common.py          Device limits, scoring, counts, JSON exports
   challenge01.py     Bell-state model, optimizer, and Pulser validation
   challenge02.py     Graph geometry, MIS model, optimizer, and validation
+  challenge02_robust.py
+                     Smooth ensemble-robust C5 optimization
 
 scripts/
   run_cloud.py       Safe Pasqal Cloud validation and QPU submission

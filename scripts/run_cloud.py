@@ -58,7 +58,7 @@ def main() -> None:
     device = devices[device_name]
     sequence = Sequence.from_abstract_repr(
         args.sequence.read_text(encoding="utf-8")
-    ).switch_device(device, strict=True)
+    ).with_new_device(device, strict=True)
     device.validate_register(sequence.register)
     print(
         f"Validated {args.sequence} for {device_name}: "

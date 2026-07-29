@@ -5,7 +5,7 @@
       "maximum_independent_sets": [
         "0111"
       ],
-      "baseline_p_mis": 0.907994921253381,
+      "baseline_p_mis": 0.9079949887098255,
       "optimized_dense_p_mis": 0.9941533641352603,
       "optimized_p_mis": 0.992212713045012,
       "optimized_modulated_p_mis": 0.9938614898245595,
@@ -51,10 +51,10 @@
         "10010",
         "10100"
       ],
-      "baseline_p_mis": 0.7875830286111817,
+      "baseline_p_mis": 0.7875830403979366,
       "optimized_dense_p_mis": 0.9831853797087847,
-      "optimized_p_mis": 0.9836312523611286,
-      "optimized_modulated_p_mis": 0.9841460971290262,
+      "optimized_p_mis": 0.9836312538942373,
+      "optimized_modulated_p_mis": 0.9841460946526326,
       "strictly_beats_baseline": true,
       "baseline_counts_500": {
         "10100": 79,
