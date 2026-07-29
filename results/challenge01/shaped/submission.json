@@ -1,0 +1,87 @@
+{
+  "challenge": 1,
+  "title": "Two atoms \u2014 Bell state under blockade",
+  "team": "team 2",
+  "optimized_pulses": {},
+  "reference_pulses": {},
+  "summary": {
+    "r1_5um": {
+      "description": "Strong blockade (V/\u03a9 = 8.8)",
+      "reference_fidelity": 0.9926100964854739,
+      "optimized_fidelity": 0.9999999999993836,
+      "improvement": 0.007389903513909668,
+      "populations": {
+        "gg": 2.369345173918165e-13,
+        "gr": 0.4999999999996969,
+        "rg": 0.4999999999996873,
+        "rr": 3.3744194493154247e-13
+      },
+      "reference_populations": {
+        "gg": 0.0016911988527019384,
+        "gr": 0.4963050482427345,
+        "rg": 0.4963050482427395,
+        "rr": 0.005698704662028917
+      },
+      "device_fidelity_pulser_4ns": 0.9999996697755447,
+      "pulse_parameters": {
+        "T_ns": 800,
+        "Omega_range_rad_per_us": [
+          0.0,
+          7.951316928803436
+        ],
+        "Delta_range_rad_per_us": [
+          -65.27162125444848,
+          16.388349879263437
+        ]
+      },
+      "cross_validation": {
+        "QuTiP_1ns": 0.9999999999993836,
+        "QuTiP_4ns": 0.9999996675898398,
+        "Pulser_1ns": 0.9999999922906873,
+        "Pulser_4ns": 0.9999996697755447,
+        "max_amp_rad_per_us": 7.951316928803436,
+        "max_det_rad_per_us": 65.27162125444848
+      }
+    },
+    "r2_6.5um": {
+      "description": "Weak blockade (V/\u03a9 = 1.8)",
+      "reference_fidelity": 0.7502722573234502,
+      "optimized_fidelity": 0.9999999999999345,
+      "improvement": 0.24972774267648434,
+      "populations": {
+        "gg": 3.140797417955507e-14,
+        "gr": 0.49999999999996897,
+        "rg": 0.4999999999999657,
+        "rr": 3.5666613324789463e-14
+      },
+      "reference_populations": {
+        "gg": 0.02598562685032834,
+        "gr": 0.3751361286617267,
+        "rg": 0.3751361286617237,
+        "rr": 0.2237421158261455
+      },
+      "device_fidelity_pulser_4ns": 0.9999999364113864,
+      "pulse_parameters": {
+        "T_ns": 1500,
+        "Omega_range_rad_per_us": [
+          0.0,
+          7.912152950232828
+        ],
+        "Delta_range_rad_per_us": [
+          -45.96261328939898,
+          3.9832731460665394
+        ]
+      },
+      "cross_validation": {
+        "QuTiP_1ns": 0.9999999999999345,
+        "QuTiP_4ns": 0.999999836274968,
+        "Pulser_1ns": 0.9999999949210971,
+        "Pulser_4ns": 0.9999999364113864,
+        "max_amp_rad_per_us": 7.912152950232828,
+        "max_det_rad_per_us": 45.96261328939898
+      }
+    }
+  },
+  "hardware_validation_job_ids": [],
+  "explanation": "We replace the reference square pulse with a smoothly-shaped \u03a9(t) and a time-dependent detuning \u03b4(t) optimized via L-BFGS-B with direct Hamiltonian integration (10 substeps/ns). The key insight: at weak blockade (r\u2082 = 6.5\u00b5m, V/\u03a9 = 1.8), the square pulse leaks 22% population into |rr\u27e9 because the interaction is too weak to suppress double excitation. Our shaped pulse starts \u03b4(t) far blue-detuned (\u221246 rad/\u00b5s), which increases the |s\u27e9\u2013|rr\u27e9 gap to V \u2212 \u03b4 \u2248 57 rad/\u00b5s, then sweeps \u03b4(t) through resonance mid-pulse to actively de-excite any residual |rr\u27e9 population through the \u03a9-coupled |s\u27e9 channel. The smooth \u03a9 envelope (0 \u2192 8 \u2192 0 rad/\u00b5s) and long duration (T = 1500 ns) ensure adiabaticity. At strong blockade (r\u2081 = 5.0\u00b5m, V/\u03a9 = 8.8) the same strategy further suppresses the residual |rr\u27e9 from 0.6% to < 10\u207b\u00b9\u00b2."
+}
