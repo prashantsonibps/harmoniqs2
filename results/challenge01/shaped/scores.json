@@ -1,0 +1,74 @@
+{
+  "challenge": 1,
+  "target": "(|gr> + |rg>) / sqrt(2)",
+  "method": "B-spline shaped pulse with direct Hamiltonian integration + active |rr> de-excitation",
+  "spacings": {
+    "5.0um": {
+      "description": "Strong blockade (V/Ω = 8.8)",
+      "T_ns": 800,
+      "n_knots": 8,
+      "reference_fidelity": 0.9926100964854739,
+      "model_fidelity_1ns": 0.9999999999993836,
+      "optimized_fidelity_qt_4ns": 0.9999996675898398,
+      "optimized_fidelity_pulser_4ns": 0.9999996697755447,
+      "populations_qt_4ns": {
+        "gg": 1.66e-07,
+        "gr": 0.4999998338,
+        "rg": 0.4999998338,
+        "rr": 1.66e-07
+      },
+      "populations_pulser_4ns": {
+        "gg": 6.08e-08,
+        "rg": 0.4999998349,
+        "gr": 0.4999998349,
+        "rr": 2.69e-07
+      },
+      "max_omega_rad_per_us": 7.95,
+      "max_detuning_rad_per_us": 65.27,
+      "within_device_bounds": true,
+      "strictly_beats_baseline": true,
+      "improvement_over_baseline": 0.0073899
+    },
+    "6.5um": {
+      "description": "Weak blockade (V/Ω = 1.8)",
+      "T_ns": 1500,
+      "n_knots": 10,
+      "reference_fidelity": 0.7502722573234502,
+      "model_fidelity_1ns": 0.9999999999999345,
+      "optimized_fidelity_qt_4ns": 0.999999836274968,
+      "optimized_fidelity_pulser_4ns": 0.9999999364113864,
+      "populations_qt_4ns": {
+        "gg": 1.57e-07,
+        "gr": 0.4999999181,
+        "rg": 0.4999999181,
+        "rr": 6.93e-09
+      },
+      "populations_pulser_4ns": {
+        "gg": 9.62e-09,
+        "rg": 0.4999999682,
+        "gr": 0.4999999682,
+        "rr": 5.40e-08
+      },
+      "max_omega_rad_per_us": 7.91,
+      "max_detuning_rad_per_us": 45.96,
+      "within_device_bounds": true,
+      "strictly_beats_baseline": true,
+      "improvement_over_baseline": 0.2497277
+    }
+  },
+  "baseline_comparison": {
+    "segment_based_optimization": {
+      "path": "results/challenge01/scores.json",
+      "description": "6-segment piecewise-constant (differential evolution + L-BFGS-B)",
+      "5.0um_fidelity": 0.99999824,
+      "6.5um_fidelity": 0.99996842
+    },
+    "shaped_pulse_optimization": {
+      "path": "results/challenge01/shaped/scores.json",
+      "description": "B-spline shaped pulse with leakage penalty (direct integration + L-BFGS-B)",
+      "5.0um_fidelity_pulser_4ns": 0.99999967,
+      "6.5um_fidelity_pulser_4ns": 0.99999994,
+      "infidelity_multiplier_improvement_6.5um": 3.2
+    }
+  }
+}
